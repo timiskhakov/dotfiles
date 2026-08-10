@@ -27,6 +27,5 @@ require("lazy").setup({
     spec = {
         { import = "plugins" },
     },
-    install = { colorscheme = { "folke/tokyonight.nvim" } },
     checker = { enabled = true, notify = false },
 })
