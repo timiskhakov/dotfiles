@@ -1,0 +1,13 @@
+[general]
+import = [
+	"~/.config/alacritty/kanagawa.toml"
+]
+
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+size = 12
+
+[window]
+dimensions = { columns = 120, lines = 40 }
+padding = {x = 4, y = 4}
+dynamic_title = false
