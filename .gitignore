@@ -1,7 +1,7 @@
-/*/
+/*
 
-/!.gitignore
-!.tmux.conf
+!/.gitignore
 
 !/alacritty/
 !/nvim/
+!/tmux/

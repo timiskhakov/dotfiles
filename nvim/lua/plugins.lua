@@ -17,7 +17,6 @@ return {
             vim.cmd("colorscheme kanagawa")
         end,
     },
-
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -32,7 +31,6 @@ return {
             vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true })
         end,
     },
-
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -45,7 +43,6 @@ return {
             })
         end,
     },
-
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -69,7 +66,6 @@ return {
             vim.keymap.set("n", "<leader>fb", builtin.buffers)
         end,
     },
-
     {
         "lewis6991/gitsigns.nvim",
         config = function()
