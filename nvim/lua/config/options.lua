@@ -12,7 +12,7 @@ vim.opt.wrap = false
 
 vim.opt.splitright = true
 
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamed"
 
 vim.opt.fillchars:append({ vert = "┃" })
 
