@@ -4,8 +4,8 @@ import = [
 ]
 
 [font]
-normal = { family = "Fira Code", style = "Regular" }
-size = 12
+normal = { family = "FiraMono Nerd Font", style = "Regular" }
+size = 13
 
 [window]
 dimensions = { columns = 120, lines = 40 }

@@ -22,6 +22,7 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("nvim-tree").setup({
+                sync_root_with_cwd = true,
                 on_attach = function(bufnr)
                     local api = require("nvim-tree.api")
                     api.config.mappings.default_on_attach(bufnr)
@@ -70,6 +71,20 @@ return {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup({})
+        end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter").install({ "go", "lua" })
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function(ev)
+                    pcall(vim.treesitter.start, ev.buf)
+                end,
+            })
         end,
     },
 }

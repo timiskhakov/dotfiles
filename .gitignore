@@ -1,7 +1,9 @@
 /*
 
 !/.gitignore
+!readme.md
 
 !/alacritty/
+!/neovide/
 !/nvim/
 !/tmux/
