@@ -10,4 +10,5 @@ Programs:
 
 Dependencies:
 - FiraMono Nerd Font
-- treesitter-cli
+- treesitter-cli (brew)
+- gopls (brew)

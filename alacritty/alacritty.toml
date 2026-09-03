@@ -5,7 +5,7 @@ import = [
 
 [font]
 normal = { family = "FiraMono Nerd Font", style = "Regular" }
-size = 13
+size = 12
 
 [window]
 dimensions = { columns = 120, lines = 40 }

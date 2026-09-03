@@ -18,3 +18,9 @@ vim.opt.fillchars:append({ vert = "┃" })
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+vim.diagnostic.config({
+    virtual_text = true,
+    severity_sort = true,
+    update_in_insert = true,
+})
