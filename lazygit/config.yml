@@ -1,0 +1,30 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#7E9CD8" # crystalBlue
+      - bold
+    inactiveBorderColor:
+      - "#54546D" # sumiInk6
+    searchingActiveBorderColor:
+      - "#E6C384" # carpYellow
+      - bold
+    optionsTextColor:
+      - "#7E9CD8" # crystalBlue
+    selectedLineBgColor:
+      - "#2D4F67" # waveBlue2
+    inactiveViewSelectedLineBgColor:
+      - "#223249" # waveBlue1
+    cherryPickedCommitFgColor:
+      - "#1F1F28" # sumiInk3
+    cherryPickedCommitBgColor:
+      - "#D27E99" # sakuraPink
+    markedBaseCommitFgColor:
+      - "#1F1F28" # sumiInk3
+    markedBaseCommitBgColor:
+      - "#E6C384" # carpYellow
+    unstagedChangesColor:
+      - "#C34043" # autumnRed
+    defaultFgColor:
+      - "#DCD7BA" # fujiWhite
+  authorColors:
+    "*": "#957FB8" # oniViolet

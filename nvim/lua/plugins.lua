@@ -49,6 +49,19 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local actions = require("telescope.actions")
+            local pickers = {
+                buffers = {
+                    mappings = {
+                        n = { ["d"] = actions.delete_buffer },
+                    },
+                },
+            }
+            pickers["live_grep"]            = { show_line = false }
+            pickers["grep_string"]          = { show_line = false }
+            pickers["lsp_references"]       = { show_line = false }
+            pickers["lsp_definitions"]      = { show_line = false }
+            pickers["lsp_type_definitions"] = { show_line = false }
+            pickers["lsp_implementations"]  = { show_line = false }
             require("telescope").setup({
                 defaults = {
                     initial_mode = "normal",
@@ -58,13 +71,7 @@ return {
                         vertical = { prompt_position = "top", mirror = true },
                     },
                 },
-                pickers = {
-                    buffers = {
-                        mappings = {
-                            n = { ["d"] = actions.delete_buffer },
-                        },
-                    },
-                },
+                pickers = pickers,
             })
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", builtin.find_files)
