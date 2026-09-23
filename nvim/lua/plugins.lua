@@ -141,4 +141,17 @@ return {
             })
         end,
     },
+    {
+        "jiaoshijie/undotree",
+        opts = {},
+        keys = {
+            { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
+        },
+        config = function()
+            require("undotree").setup({
+                position = "right"
+            })
+        end
+
+    }
 }

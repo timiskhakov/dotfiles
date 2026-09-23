@@ -16,6 +16,7 @@ vim.opt.clipboard = "unnamed"
 
 vim.opt.fillchars:append({ vert = "┃" })
 
+vim.opt.ignorecase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
