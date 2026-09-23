@@ -106,7 +106,7 @@ return {
             local telescope = require("telescope.builtin")
 
             -- Go
-            vim.lsp.config("gopls", { settings = { gopls = { usePlaceholders = true } } })
+            vim.lsp.config("gopls", { settings = { gopls = { usePlaceholders = false } } })
             vim.lsp.enable("gopls")
 
             -- C
@@ -128,22 +128,25 @@ return {
         version = "1.*",
         config = function()
             require("blink.cmp").setup({
+                cmdline = { enabled = false },
+                signature = { enabled = true },
                 keymap = {
                     preset = "enter",
-                    ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
+                    ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+                    ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
                 },
                 completion = {
-                    list = { selection = { preselect = false, auto_insert = false } },
-                    documentation = { auto_show = true, auto_show_delay_ms = 200 },
-                    menu = { draw = { treesitter = { "lsp" } } },
+                    list = { selection = { preselect = true, auto_insert = false } },
+                    menu = {
+                        auto_show = true,
+                    },
+                    documentation = { auto_show = true, auto_show_delay_ms = 500 },
                 },
-                signature = { enabled = true },
             })
         end,
     },
     {
         "jiaoshijie/undotree",
-        opts = {},
         keys = {
             { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
         },
@@ -152,6 +155,15 @@ return {
                 position = "right"
             })
         end
-
-    }
+    },
+    {
+        "tzachar/local-highlight.nvim",
+        opts = {},
+        config = function()
+            require("local-highlight").setup({
+                file_types = { "go" },
+                animate = { enabled = false },
+            })
+        end
+    },
 }
