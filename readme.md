@@ -6,7 +6,6 @@ Programs:
 - git
 - lazygit
 - Neovim
-- Neovide
 
 Dependencies:
 - FiraMono Nerd Font

@@ -26,5 +26,5 @@ gui:
       - "#C34043" # autumnRed
     defaultFgColor:
       - "#DCD7BA" # fujiWhite
-  authorColors:
-    "*": "#957FB8" # oniViolet
+    authorColors:
+      "*": "#957FB8" # oniViolet

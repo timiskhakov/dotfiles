@@ -23,6 +23,11 @@ return {
         config = function()
             require("nvim-tree").setup({
                 sync_root_with_cwd = true,
+                actions = {
+                    open_file = {
+                        resize_window = false,
+                    }
+                },
                 on_attach = function(bufnr)
                     local api = require("nvim-tree.api")
                     api.config.mappings.default_on_attach(bufnr)
@@ -77,6 +82,13 @@ return {
             vim.keymap.set("n", "<leader>ff", builtin.find_files)
             vim.keymap.set("n", "<leader>fi", builtin.live_grep)
             vim.keymap.set("n", "<leader>fb", builtin.buffers)
+            vim.keymap.set("n", "<leader>fe", function() builtin.diagnostics({ bufnr = 0 }) end)
+            vim.keymap.set("n", "<leader>fg", function()
+                local res = vim.system({ "git", "rev-parse", "--is-inside-work-tree" }, { text = true }):wait()
+                --if res.code == 0 and vim.trim(res.stdout) == "true" then
+                    builtin.git_status()
+                --end
+            end)
         end,
     },
     {
@@ -161,7 +173,7 @@ return {
         opts = {},
         config = function()
             require("local-highlight").setup({
-                file_types = { "go" },
+                file_types = { "go", "c", "typescript" },
                 animate = { enabled = false },
             })
         end
