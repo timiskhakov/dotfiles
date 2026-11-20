@@ -125,7 +125,7 @@ return {
             vim.lsp.enable("clangd")
 
             -- TS
-            vim.lsp.enabled("ts_ls")
+            vim.lsp.enable("ts_ls")
 
             vim.keymap.set("n", "gd", telescope.lsp_definitions, {
                 desc = "Go to definition",
