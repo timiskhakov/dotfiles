@@ -85,9 +85,9 @@ return {
             vim.keymap.set("n", "<leader>fe", function() builtin.diagnostics({ bufnr = 0 }) end)
             vim.keymap.set("n", "<leader>fg", function()
                 local res = vim.system({ "git", "rev-parse", "--is-inside-work-tree" }, { text = true }):wait()
-                --if res.code == 0 and vim.trim(res.stdout) == "true" then
+                if res.code == 0 and vim.trim(res.stdout) == "true" then
                     builtin.git_status()
-                --end
+                end
             end)
         end,
     },
@@ -123,6 +123,9 @@ return {
 
             -- C
             vim.lsp.enable("clangd")
+
+            -- TS
+            vim.lsp.enabled("ts_ls")
 
             vim.keymap.set("n", "gd", telescope.lsp_definitions, {
                 desc = "Go to definition",
